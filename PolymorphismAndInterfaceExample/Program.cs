@@ -4,7 +4,24 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            PlayGame();
+
+            Console.ReadLine();
+        }
+
+        static void PlayGame()
+        {
+            IAttackable[] enemies = new IAttackable[]
+            {
+                new Goblin(),
+                new Orc(),
+                new Dragon(),
+            };
+
+            foreach (IAttackable enemy in enemies)
+            {
+                enemy.Attacked(5);
+            }
         }
     }
 }
