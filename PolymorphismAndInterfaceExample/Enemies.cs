@@ -29,4 +29,19 @@
             }
         }
     }
+
+    public class Dragon : IAttackable
+    {
+        public int Health { get; set; } = 50;
+
+        public void Attacked(int damage)
+        {
+            Health -= damage;
+            Console.WriteLine($"Dragon hit for {damage} damage! Health: {Health}");
+            if (Health <= 0)
+            {
+                Console.WriteLine("Dragon defeated!  The skies are safe!");
+            }
+        }
+    }
 }
