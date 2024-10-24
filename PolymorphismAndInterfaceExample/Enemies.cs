@@ -4,7 +4,7 @@
     {
         public int Health { get; set; } = 10;
 
-        public void Attacked (int damage)
+        public void Attacked(int damage)
         {
             Health -= damage;
             Console.WriteLine($"Goblin hit for {damage} damage! Health: {Health}");
@@ -14,3 +14,19 @@
             }
         }
     }
+
+    public class Orc : IAttackable
+    {
+        public int Health { get; set; } = 20;
+
+        public void Attacked(int damage)
+        {
+            Health -= damage;
+            Console.WriteLine($"Orc hit for {damage} damage! Health: {Health}");
+            if (Health <= 0)
+            {
+                Console.WriteLine("Orc defeated!");
+            }
+        }
+    }
+}
